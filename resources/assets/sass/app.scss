@@ -1,0 +1,25 @@
+/*
+ * @package Starter Theme
+ *
+ * Style specific to this project
+ * Typography, font face variants, colors and positioning
+ */
+
+@charset "utf-8";
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import 'base/_startertheme-variables';
+@import 'base/_startertheme-base';
+
+@import 'modules/_startertheme-header';
+@import 'modules/_startertheme-sidebar';
+@import 'modules/_startertheme-frontpage';
+@import 'modules/_startertheme-footer';
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+// FontAwesome
+@import "~@fortawesome/fontawesome-free-webfonts/scss/fontawesome";

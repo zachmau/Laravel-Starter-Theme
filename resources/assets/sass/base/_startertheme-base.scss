@@ -1,0 +1,41 @@
+/**
+* _startertheme-base.scss
+*
+* Description: Base stylesheet.
+* Version: 2.0.0
+* Last update: 2017/01/15
+* Author: Gate 39 Media <tech@gate39media.com>
+*
+**/
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-family: $font-family-base;
+    color: $text-color;
+    font-size: $font-size-base;
+    font-weight: $font-weight !important;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: $headings-font-family;
+    font-style: $headings-font-style;
+    font-weight: $headings-font-weight;
+    line-height: $headings-line-height;
+    color: $headings-color;
+    text-transform: none;
+}
+
+a, a:hover, a:visited, a:focus {
+    color: $link-color;
+    text-decoration: $link-hover-decoration;
+    outline: 0;
+}
+
+.btn:hover,
+.btn:visited {
+    color: $white;
+}
