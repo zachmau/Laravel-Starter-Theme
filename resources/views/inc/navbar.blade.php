@@ -1,5 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-  <a class="navbar-brand" href="/">Project name</a>
+  <a class="navbar-brand" href="{{ url('/') }}">
+    {{ config('app.name', 'Project name') }}
+  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -15,10 +17,15 @@
       <li class="nav-item {{Request::is('contact') ? 'active' : ''}}">
         <a class="nav-link" href="/contact">Contact</a>
       </li>
-      <!-- Authentication Links -->
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
       @if (Auth::guest())
-      <li class="nav-item"><a href="{{ route('login') }}">Login</a></li>
-      <li class="nav-item"><a href="{{ route('register') }}">Register</a></li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('login') }}">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('register') }}">Register</a>
+      </li>
       @else
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -40,9 +47,5 @@
         </li>
       @endif
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
   </div>
 </nav>

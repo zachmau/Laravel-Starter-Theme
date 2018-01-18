@@ -7,6 +7,16 @@ use App\Message;
 
 class MessagesController extends Controller
 {
+  /**
+   * Create a new controller instance.
+   *
+   * @return void
+   */
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
+
   public function submit(Request $request){
 
     $this->validate($request, [
@@ -27,8 +37,9 @@ class MessagesController extends Controller
     return redirect('/')->with('success', 'Message Sent');
   }
 
-  public function getMessages() {
+  public function getMessages(Request $request) {
     $messages = Message::all();
+    $request->user()->authorizeRoles('admin');
 
     return view('messages')->with('messages', $messages);
   }
